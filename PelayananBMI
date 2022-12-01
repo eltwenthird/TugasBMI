@@ -1,0 +1,79 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tugascoding;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author naufa
+ */
+public class Tugasbmi {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String ripe = null;
+        System.out.println("Selamat datang di tempat pengecekan ideal berat badanmu!!");
+        System.out.println("isi formulir ini dulu yaa");
+        System.out.print("Masukkan namamu : ");
+        String nama = input.nextLine();
+        System.out.print("Masukkan alamat : ");
+        String alamat = input.nextLine();
+        System.out.print("Masukkan nomor telepon : ");
+        String notel = input.nextLine();
+        System.out.print("Apakah kamu mempunyai riwayat penyakit? (1=ya,2=tidak)");
+        int pilihan = input.nextInt();
+        switch (pilihan){
+            case 1:
+                System.out.println("Silahkan ketik riwayat penyakitmu");
+                ripe = input.next();
+               break;
+            default:
+                System.out.println("");
+        }
+        
+        System.out.print("Masukkan Tinggi badanmu : ");
+        int tb = input.nextInt();
+        System.out.print("Masukkan Berat badanmu : ");
+        int bb = input.nextInt();
+        
+        tb = tb/100;
+        double bmi = bb/(tb*tb);
+        
+        System.out.println("Berikut hasil dari formulir ideal berat badanmu!!!");
+        System.out.println("Nama : "+nama);
+        System.out.println("Alamat : "+alamat);
+        System.out.println("Nomor Telepon = "+notel);
+        if (pilihan==1){
+            System.out.println("Riwayat penyakit : "+ripe);
+        }else{
+            System.out.println("Riwayat penyakit : Tidak ada");
+        }
+        System.out.println("------------------------------------");
+        System.out.println("Tinggi badanmu : "+tb+" cm");
+        System.out.println("Berat badanmu : "+bb+" kg");
+        System.out.println("BMImu : "+bmi+" kg");
+        System.out.println("=========================");
+        if(bmi<22){
+            System.out.println("Anda Kurang berat badan");
+            System.out.println("Makan yang banyak yaa!!!");
+        }else if(bmi<=38){
+            System.out.println("Berat badan anda normal");
+            System.out.println("Pertahankan itu yaa!!!");
+        }else if(bmi<=50){
+            System.out.println("Berat badan anda lebih dari normal");
+            System.out.println("Hindari makanan yang berlemak dan berkalori yaa!!!");
+        }else if(bmi<=68){
+            System.out.println("Anda Obesitas tingkat 1");
+            System.out.println("Rajin berolahraga dan hindari makanan yang berminyak!!!");
+        }else if(bmi>68){
+            System.out.println("Anda Obesitas tingkat 2");
+            System.out.println("Semangat diet!!! Mulailah gaya hidup sehat!!!");
+        }else{
+            System.out.println("Data tidak valid");
+        }
+        System.out.println("Mulailah dari diri sendiri untuk bergaya hidup sehat!!!");
+        System.out.println("Terimakasih sudah memakai layanan kami");
+    }
+}
